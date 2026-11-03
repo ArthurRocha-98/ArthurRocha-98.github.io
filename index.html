@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#090d18" />
+    <meta name="description" content="Portfólio profissional de QA Analyst, com foco em qualidade de software e automação de testes." />
+    <title>Portfólio | Arthur Rocha</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css" />
+    <!-- Tailwind CSS (Play CDN). Para produção, prefira instalar via npm: npm i -D tailwindcss e importar no build -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // O tema é alternado via classe 'dark' no <html> (ver script applyTheme abaixo)
+      tailwind.config = { darkMode: 'class' };
+    </script>
+    <!-- Estilos da biblioteca AOS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+    <style>
+      /*Variáveis de cores globais para suportar o tema claro e escuro*/
+      :root {
+        --primary-color: #374151; /* Cinza escuro para detalhes */
+        --primary-color-hover: #000000;
+        --fundo-secundário: #f3f4f6; /* Cinza claro para os cards no modo claro */
+      }
+
+      /*Variáveis de cores globais: Tema Escuro (Preto, Cinza e branco) */
+      .dark {
+        --primary-color: #61656b; /* Cinza claro para detalhes no escuro */
+        --primary-color-hover: #ffffff;
+        --fundo-secundário: #121212; /* Preto suave para os cards no modo escuro */
+      }
+
+      /* Estilo para o botão de idioma ativo */
+      .lang-btn.active {
+        background-color: #000000;
+        color: #ffffff;
+      }
+
+      .dark .lang-btn.active {
+        background-color: #ffffff;
+        color: #000000;
+      }
+    </style>
+    <script>
+      // Aplica o tema salvo ao carregar a página
+      const applyTheme = (theme) => {
+        document.documentElement.classList.toggle('dark', theme === 'dark');
+      };
+      applyTheme(localStorage.getItem('theme') || 'light');
+
+      // Alterna o tema quando o usuário clica no botão
+      const toggleTheme = () => {
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      };
+    </script>
+  </head>
+
+
+  <body class="font-sans bg-white text-gray-900 dark:bg-[#090d18] dark:text-gray-100 transition-colors duration-300">
+    <header class="fixed top-0 left-0 w-full z-50 bg-white/90 dark:bg-black/90 backdrop-blur-md shadow-sm transition-colors duration-300">
+  <nav class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold text-gray-900 dark:text-white">HOME</a>
+    <div class="flex items-center space-x-6">
+      <a href="#experiencia" class="hover:underline text-gray-700 dark:text-gray-300" data-transalate-key="nav-experiences">Experiências</a>
+      <a href="#projetos" class="hover:underline text-gray-700 dark:text-gray-300" data-transalate-key="nav-projects">Projetos</a>
+      <a href="#contato" class="hover:underline text-gray-700 dark:text-gray-300" data-transalate-key="nav-contact">Contato</a>
+      <div class="flex items-center space-x-2 border border-gray-400 dark:border-gray-700 rounded px-2 py-1">
+        <button onclick="setLanguage('pt')" class="lang-btn px-2 rounded font-medium text-gray-800 dark:text-gray-200" id="btn-pt">PT</button>
+        <button onclick="setLanguage('en')" class="lang-btn px-2 rounded font-medium text-gray-800 dark:text-gray-200" id="btn-en">EN</button>
+      </div>
+      <button onclick="toggleTheme()" class="focus:outline-none p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-900 transition-colors" aria-label="Alternar tema">
+        <!-- Ícone Sol (aparece no modo escuro) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden dark:block text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.36 4.95l-.71-.71M6.05 6.05l-.71-.71m12.02 12.02l-.71-.71M6.05 17.95l-.71-.71M12 5a7 7 0 100 14a7 7 0 000-14z" />
+        </svg>
+        <!-- Ícone Lua (aparece no modo claro) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 block dark:hidden text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+    <main class="max-w-5xl mx-auto p-6 pt-24 space-y-20">
+        <section id="home" class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+
+            <!-- Foto do perfil -->
+            <div class="flex-shrink-0 flex items-center justify-center" data-aos="fade-right">
+              <img src="assets/foto-perfil.jpg" alt="Foto de perfil de Arthur Rocha" style="width: 12rem; height: 12rem; max-width: none; border-radius: 9999px; object-fit: cover;" class="md:w-[15rem] md:h-[15rem] border-4 border-[var(--primary-color)]" />
+            </div>
+
+            <!-- Texto de apresentação -->
+            <div class="text-center md:text-left" data-aos="fade-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-2 text-gray-900 dark:text-white" data-transalate-key="hero-greeting">Olá, eu sou Arthur Rocha!</h1>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300" data-transalate-key="hero-description">Sou um QA Analyst especializado em qualidade de software e automação de testes. Bem-vindo ao meu portfólio!</p>
+                <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mt-4 leading-relaxed" data-transalate-key="hero-description2">Aqui você poderá conhecer meus projetos, habilidades técnicas e experiências profissionais na área de Tecnologia da Informação, com foco em Qualidade de Software (QA) e Engenharia de Testes. 
+                Sou formado em Análise e Desenvolvimento de Sistemas pelo Centro Universitário do Distrito Federal (UDF) e pós-graduado em Engenharia de Software, com ênfase em Qualidade e Testes, pela Faculdade Vincit.
+                Ao longo da minha trajetória profissional, venho desenvolvendo conhecimentos e experiências em testes de software, análise de qualidade, testes funcionais, testes de API e automação de testes, sempre buscando aprimorar minhas habilidades e contribuir para a entrega de soluções tecnológicas cada vez mais eficientes e confiáveis.
+                </p>
+                <div class="mt-6">
+                    <a href="assets/CV_Arthur_Rocha_PT.pdf" download id="cv-download-link" class="inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300" data-transalate-key="hero-button-projects">Baixar meu CV</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Habilidades -->
+        <section id="skills">
+          <h2 class="text-3xl font-bold mb-6" data-transalate-key="skills-title">Habilidades e Competências</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
+            <!-- Primeiro Card surge de baixo-->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)]" data-aos="fade-up">
+              <h3 class="text-xl font-semibold mb-2" data-transalate-key="skills-card1-title">Automação de Testes</h3>
+              <p class="text-gray-700 dark:text-gray-300" data-transalate-key="skills-card1-description">Experiência em automação de testes utilizando ferramentas como Selenium, Cypress e Robot Framework, garantindo a qualidade e eficiência dos processos de teste.</p>
+            </div>  
+            <!-- Segundo Card surge de baixo com 150ms de atraso-->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)]" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-xl font-semibold mb-2" data-transalate-key="skills-card2-title">Testes Manuais</h3>
+              <p class="text-gray-700 dark:text-gray-300" data-transalate-key="skills-card2-description">Habilidade em realizar testes manuais detalhados, identificando bugs e garantindo que os requisitos do software sejam atendidos de forma eficaz.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção de Experiência Profissional -->
+        <section id="experiencia">
+          <h2 class="text-3xl font-bold text-center mb-12 text-gray-900 dark:text-white" data-transalate-key="experience-title">Experiência Profissional</h2>
+          <div class="space-y-8">
+            
+            <!-- Card Unificado: Stefanini Group -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)] text-gray-900 dark:text-gray-100" data-aos="fade-up">
+              <!-- Cabeçalho com Cargo, Empresa e Período Global -->
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-4 gap-2 border-b border-gray-300 dark:border-gray-700 pb-3">
+                <div>
+                  <h3 class="text-xl font-bold" data-transalate-key="experience-card1-title">Analista de Qualidade - Stefanini Group</h3>
+                </div>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full self-start" data-transalate-key="experience-card1-duration">Out/2022 - Abr/2026</span>
+              </div>
+
+              <!-- Sub-seção do Projeto 1 -->
+              <div class="mb-4">
+                <p class="text-sm font-semibold text-[var(--primary-color)]" data-transalate-key="experience-card1-location">Projeto: RiHappy (Fev/2025 - Abr/2026)</p>
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+                  <li data-transalate-key="experience-card1-responsibility1">Atuação em testes funcionais e de frontend para aplicações web desktop e mobile. Responsável pela validação de APIs via Postman e OpenSearch, testes automatizados utilizando Cypress e Cursor, integração em pipelines CI/CD e garantia de conformidade de UI/UX com base no Figma.</li>
+                </ul>
+              </div>
+
+              <!-- Sub-seção do Projeto 2 -->
+              <div>
+                <p class="text-sm font-semibold text-[var(--primary-color)]" data-transalate-key="experience-card2-location">Projeto: Fapesp - Fundação de Amparo à Pesquisa do Estado de São Paulo (Out/2022 - Out/2024)</p>
+                <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-2 space-y-1">
+                  <li data-transalate-key="experience-card2-responsibility1">Condução de testes de sistema web (funcionais, regressão e exploratórios) e criação de cenários em Gherkin com apoio de Inteligência Artificial. Atuação na interpretação de logs de banco de dados via DBeaver para análise de causa raiz e diferenciação de falhas entre Front-end e Back-end.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card de Experiência: Betha Sistemas -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)] text-gray-900 dark:text-gray-100" data-aos="fade-up" data-aos-delay="100">
+              <!-- Cabeçalho com Cargo, Empresa e Período Global -->
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+                <div>
+                  <h3 class="text-xl font-bold" data-transalate-key="experience-card3-title">Assistente de Desenvolvimento - Betha Sistemas</h3>
+                  <p class="text-sm font-semibold text-[var(--primary-color)] mt-0.5" data-transalate-key="experience-card3-location">Projeto: Vertical Educação</p>
+                </div>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full self-start" data-transalate-key="experience-card3-duration">Out/2023 - Abr/2024</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-3 space-y-1">
+                <li data-transalate-key="experience-card3-responsibility1">Execução de testes manuais, funcionais e de performance em sistemas web educacionais. Responsável pela elaboração de casos de teste, tracking de defeitos e planejamento de métricas de esforço junto ao time de desenvolvimento.</li>
+              </ul>
+            </div>
+
+          <!-- Card de Experiência: Matera Systems -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)] text-gray-900 dark:text-gray-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+                <div>
+                  <h3 class="text-xl font-bold" data-transalate-key="experience-card4-title">Analista de Testes - Matera Systems</h3>
+                  <p class="text-sm font-semibold text-[var(--primary-color)] mt-0.5" data-transalate-key="experience-card4-location">Projeto: Sistema de Renda Fixa; Tech Bank Investimentos</p>
+                </div>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full self-start" data-transalate-key="experience-card4-duration">Jul/2022 - Jun/2023</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-3 space-y-1">
+                <li data-transalate-key="experience-card4-responsibility1">Execução de testes manuais, de regressão e de API REST/Oracle. Participação na preparação de ambientes (Tomcat/Oracle), geração de relatórios de execução no Zephyr e liberação de versões automatizadas via pipelines CI/CD no Jenkins.</li>
+              </ul>
+            </div>
+
+          <!-- Card de Experiência: Ci&T -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)] text-gray-900 dark:text-gray-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+                <div>
+                  <h3 class="text-xl font-bold" data-transalate-key="experience-card5-title">Software QA Tester - Ci&T</h3>
+                  <p class="text-sm font-semibold text-[var(--primary-color)] mt-0.5" data-transalate-key="experience-card5-location">Projeto: Bradesco App Mobile</p>
+                </div>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full self-start" data-transalate-key="experience-card5-duration">Mar/2021 - Jun/2022</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-3 space-y-1">
+                <li data-transalate-key="experience-card5-responsibility1">Realização de testes mobile (Android) focados em transações financeiras e pagamentos de boletos. Elaboração de cenários, execução de testes funcionais, exploratórios e de regressão, com gestão de evidências e bugs na plataforma OCT-Alm. Octane.</li>
+              </ul>
+            </div>
+
+          <!-- Card de Experiência: Fóton Informática -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)] text-gray-900 dark:text-gray-100" data-aos="fade-up" data-aos-delay="100">
+              <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3 gap-2">
+                <div>
+                  <h3 class="text-xl font-bold" data-transalate-key="experience-card6-title">Testador - Fóton Informática</h3>
+                  <p class="text-sm font-semibold text-[var(--primary-color)] mt-0.5" data-transalate-key="experience-card6-location">Projeto: Caixa Econômica Federal</p>
+                </div>
+                <span class="text-sm font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-800 px-3 py-1 rounded-full self-start" data-transalate-key="experience-card6-duration">Jul/2019 - Abr/2020</span>
+              </div>
+              <ul class="list-disc list-inside text-gray-700 dark:text-gray-300 mt-3 space-y-1">
+                <li data-transalate-key="experience-card6-responsibility1">Execução de testes funcionais, exploratórios e de confirmação em ambiente Linux para sistemas de automação de produtos e serviços bancários. Validação por meio de scripts SQL e abertura de evidências e casos de teste no Jira.</li>
+              </ul>
+            </div>
+        </div>
+        </section>
+
+        <section id="projetos">
+          <h2 class="text-3xl font-bold mb-6 text-gray-900 dark:text-white" data-transalate-key="projects-title">Projetos</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Primeiro Card de Projeto -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)]" data-aos="fade-up">
+              <h3 class="text-xl font-semibold mb-2" data-transalate-key="projects-card1-title">Projeto Automação de Testes com Cypress</h3>
+              <p class="text-gray-700 dark:text-gray-300" data-transalate-key="projects-card1-description">Desenvolvimento de um conjunto de testes automatizados utilizando Cypress + Cucumber para validar funcionalidades críticas de uma aplicação web, garantindo a qualidade e a confiabilidade do software.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card1-tech1">Cypress</span>
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card1-tech2">Cucumber</span>
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card1-tech3">JavaScript</span>
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card1-tech4">Gherkin</span>
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card1-tech5">HTML</span>
+              </div>
+              <a href="https://github.com/ArthurRocha-98/TesteAutoma-o" target="_blank" class="font-semibold text-[var(--primary-color)] hover:underline" data-transalate-key="projects-card1-github">Ver no GitHub</a>
+            </div>
+
+            <!-- Segundo Card de Projeto -->
+            <div class="bg-[var(--fundo-secundário)] p-6 rounded-lg shadow-lg border border-[var(--primary-color)]" data-aos="fade-up" data-aos-delay="100">
+              <h3 class="text-xl font-semibold mb-2" data-transalate-key="projects-card2-title">Desafio de Automação</h3>
+              <p class="text-gray-700 dark:text-gray-300" data-transalate-key="projects-card2-description">Teste Automatizado para um projeto específico.</p>
+              <div class="flex flex-wrap gap-2 mb-4">
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card2-tech1">JavaScript</span>
+                <span class="bg-[var(--primary-color)] text-white px-3 py-1 rounded-full text-sm" data-transalate-key="projects-card2-tech2">Gherkin</span>
+              </div>
+              <a href="https://github.com/ArthurRocha-98/desafio-automa-o-inmetrics" target="_blank" class="font-semibold text-[var(--primary-color)] hover:underline" data-transalate-key="projects-card2-github">Ver no GitHub</a>
+            </div>
+          </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section id="contato" class="text-center flex flex-col items-center">
+          <h2 class="text-3xl font-bold mb-6" data-transalate-key="contact-title">Fale Comigo!</h2>
+          <p class="text-gray-700 dark:text-gray-300 mb-4" data-transalate-key="contact-description">Se você deseja entrar em contato comigo, sinta-se à vontade para enviar um e-mail ou me conectar através das redes sociais.</p>
+          <div class="flex space-x-4">
+            <a href="mailto:Arthur.1155@outlook.com" class="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300" data-transalate-key="contact-button-email">Enviar um E-mail</a>
+            <a href="https://www.linkedin.com/in/arthur-rocha-b1388b146/" target="_blank" class="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300" data-transalate-key="contact-button-linkedin">LinkedIn</a>
+            <a href="https://www.github.com/ArthurRocha-98" target="_blank" class="bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300" data-transalate-key="contact-button-github">GitHub</a>
+          </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-[var(--fundo-secundário)] py-6 text-center border-t border-[var(--primary-color)]">
+      <p class="text-gray-700 dark:text-gray-300" data-transalate-key="footer-text">Desenvolvido por Arthur Rocha. Todos os direitos reservados. © 2026</p>
+    </footer>
+
+    <!-- Scripts de Tradução e Configuração -->
+    <script>
+        const translations = {
+          pt: {
+            "nav-projects": "Projetos",
+            "nav-contact": "Contato",
+            "nav-experience": "Experiências",
+            "hero-greeting": "Olá, eu sou Arthur Rocha!",
+            "hero-description": "Sou um QA Analyst especializado em qualidade de software e automação de testes. Bem-vindo ao meu portfólio!",
+            "hero-description2": `Aqui você poderá conhecer meus projetos, habilidades técnicas e experiências profissionais na área de Tecnologia da Informação, com foco em Qualidade de Software (QA) e Engenharia de Testes. 
+Sou formado em Análise e Desenvolvimento de Sistemas pelo Centro Universitário do Distrito Federal (UDF) e pós-graduado em Engenharia de Software, com ênfase em Qualidade e Testes, pela Faculdade Vincit. 
+Ao longo da minha trajetória profissional, venho desenvolvendo conhecimentos e experiências em testes de software, análise de qualidade, testes funcionais, testes de API e automação de testes, sempre buscando aprimorar minhas habilidades e contribuir para a entrega de soluções tecnológicas cada vez mais eficientes e confiáveis`,
+            "hero-button-projects": "Baixar meu CV",
+            "skills-title": "Habilidades e Competências",
+            "skills-card1-title": "Automação de Testes",
+            "skills-card1-description": "Experiência em automação de testes utilizando ferramentas como Selenium, Cypress e Robot Framework, garantindo a qualidade e eficiência dos processos de teste.",
+            "skills-card2-title": "Testes Manuais",
+            "skills-card2-description": "Habilidade em realizar testes manuais detalhados, identificando bugs e garantindo que os requisitos do software sejam atendidos de forma eficaz.",
+            "experience-title": "Experiência Profissional",
+            "experience-card1-title": "Analista de Qualidade - Stefanini Group",
+            "experience-card1-duration": "Out/2024 - Abr/2026",
+            "experience-card1-location": "Projeto: RiHappy",
+            "experience-card1-responsibility1": "Atuação em testes funcionais e de frontend para aplicações web desktop e mobile. Responsável pela validação de APIs via Postman e OpenSearch, testes automatizados utilizando Cypress e Cursor, integração em pipelines CI/CD e garantia de conformidade de UI/UX com base no Figma.",
+            "experience-card2-title": "Analista de Qualidade - Stefanini Group",
+            "experience-card2-duration": "Out/2022 - Out/2024",
+            "experience-card2-location": "Projeto: Fapesp - Fundação de Amparo à Pesquisa do Estado de São Paulo",
+            "experience-card2-responsibility1": "Condução de testes de sistema web (funcionais, regressão e exploratórios) e criação de cenários em Gherkin com apoio de Inteligência Artificial. Atuação na interpretação de logs de banco de dados via DBeaver para análise de causa raiz e diferenciação de falhas entre Front-end e Back-end.",
+            "experience-card3-title": "Assistente de Desenvolvimento - Betha Sistemas",
+            "experience-card3-duration": "Out/2023 - Abr/2024",
+            "experience-card3-location": "Projeto: Vertical Educação",
+            "experience-card3-responsibility1": "Execução de testes manuais, funcionais e de performance em sistemas web educacionais. Responsável pela elaboração de casos de teste, tracking de defeitos e planejamento de métricas de esforço junto ao time de desenvolvimento.",
+            "experience-card4-title": "Analista de Testes - Matera Systems",
+            "experience-card4-duration": "Jul/2022 - Jun/2023",
+            "experience-card4-location": "Projeto: Sistema de Renda Fixa; Tech Bank Investimentos",
+            "experience-card4-responsibility1": "Execução de testes manuais, de regressão e de API REST/Oracle. Participação na preparação de ambientes (Tomcat/Oracle), geração de relatórios de execução no Zephyr e liberação de versões automatizadas via pipelines CI/CD no Jenkins.",
+            "experience-card5-title": "Software QA Tester - Ci&T",
+            "experience-card5-duration": "Mar/2021 - Jun/2022",
+            "experience-card5-location": "Projeto: Bradesco App Mobile",
+            "experience-card5-responsibility1": "Realização de testes mobile (Android) focados em transações financeiras e pagamentos de boletos. Elaboração de cenários, execução de testes funcionais, exploratórios e de regressão, com gestão de evidências e bugs na plataforma OCT-Alm. Octane.",
+            "experience-card6-title": "Testador - Fóton Informática",
+            "experience-card6-duration": "Jul/2019 - Abr/2020",
+            "experience-card6-location": "Projeto: Caixa Econômica Federal",
+            "experience-card6-responsibility1": "Execução de testes funcionais, exploratórios e de confirmação em ambiente Linux para sistemas de automação de produtos e serviços bancários. Validação por meio de scripts SQL e abertura de evidências e casos de teste no Jira.",
+            "projects-title": "Projetos",
+            "projects-card1-title": "Projeto Automação de Testes com Cypress",
+            "projects-card1-description": "Desenvolvimento de um conjunto de testes automatizados utilizando Cypress + Cucumber para validar funcionalidades críticas de uma aplicação web, garantindo a qualidade e a confiabilidade do software.",
+            "projects-card1-link": "Ver Projeto",
+            "projects-card1-github": "Ver no GitHub",
+            "projects-card2-title": "Desafio de Automação",
+            "projects-card2-description": "Teste Automatizado para um projeto específico.",
+            "projects-card2-link": "Ver Projeto",
+            "projects-card2-github": "Ver no GitHub",
+            "contact-title": "Fale Comigo!",
+            "contact-description": "Se você deseja entrar em contato comigo, sinta-se à vontade para enviar um e-mail ou me conectar através das redes sociais.",
+            "contact-button-email": "Enviar um E-mail",
+            "contact-button-linkedin": "LinkedIn",
+            "contact-button-github": "GitHub",
+            "footer-text": "Desenvolvido por Arthur Rocha. Todos os direitos reservados. © 2026",
+          },
+          en: {
+            "nav-projects": "Projects",
+            "nav-contact": "Contact",
+            "nav-experience": "Experiências",
+            "hero-greeting": "Hello, I'm Arthur Rocha!",
+            "hero-description": "I am a QA Analyst specialized in software quality and test automation. Welcome to my portfolio!",
+            "hero-description2": `Here you can explore my projects, technical skills, and professional experiences in Information Technology, focusing on Software Quality (QA) and Test Engineering. 
+I hold a degree in Systems Analysis and Development from the Centro Universitário do Distrito Federal (UDF) and a postgraduate degree in Software Engineering with an emphasis on Quality and Testing from Faculdade Vincit. 
+Throughout my career, I have built solid knowledge and hands-on experience in software testing, quality analysis, functional testing, API testing, and test automation, always striving to refine my skills and contribute to delivering increasingly efficient and reliable technological solutions.`,
+            "hero-button-projects": "Download my CV",
+            "skills-title": "Skills and Competencies",
+            "skills-card1-title": "Test Automation",
+            "skills-card1-description": "Experience in test automation using tools such as Selenium, Cypress, and Robot Framework, ensuring quality and efficiency in testing processes.",
+            "skills-card2-title": "Manual Testing",
+            "skills-card2-description": "Skilled in performing detailed manual tests, identifying bugs, and ensuring that software requirements are effectively met.",
+            "experience-title": "Professional Experience",
+            "experience-card1-title": "Quality Analyst - Stefanini Group",
+            "experience-card1-duration": "Oct/2024 - Apr/2026",
+            "experience-card1-location": "Project: RiHappy",
+            "experience-card1-responsibility1": "Functional and frontend testing for desktop and mobile web applications. Responsible for API validation via Postman and OpenSearch, automated testing using Cypress and Cursor, CI/CD pipeline integration, and UI/UX compliance assurance based on Figma.",
+            "experience-card2-title": "Quality Analyst - Stefanini Group",
+            "experience-card2-duration": "Oct/2022 - Oct/2024",
+            "experience-card2-location": "Project: Fapesp - São Paulo Research Foundation",
+            "experience-card2-responsibility1": "Conducted web system testing (functional, regression, and exploratory) and created Gherkin scenarios with AI support. Analyzed database logs via DBeaver for root cause analysis and differentiation between Front-end and Back-end failures.",
+            "experience-card3-title": "Development Assistant - Betha Sistemas",
+            "experience-card3-duration": "Oct/2023 - Apr/2024",
+            "experience-card3-location": "Project: Vertical Educação",
+            "experience-card3-responsibility1": "Executed manual, functional, and performance testing on educational web systems. Responsible for creating test cases, defect tracking, and effort metrics planning with the development team.",
+            "experience-card4-title": "Test Analyst - Matera Systems",
+            "experience-card4-duration": "Jul/2022 - Jun/2023",
+            "experience-card4-location": "Project: Fixed Income System; Tech Bank Investimentos",
+            "experience-card4-responsibility1": "Executed manual, regression, and REST API/Oracle testing. Participated in environment setup (Tomcat/Oracle), execution report generation in Zephyr, and automated release through CI/CD pipelines in Jenkins.",
+            "experience-card5-title": "Software QA Tester - Ci&T",
+            "experience-card5-duration": "Mar/2021 - Jun/2022",
+            "experience-card5-location": "Project: Bradesco Mobile App",
+            "experience-card5-responsibility1": "Performed mobile testing (Android) focused on financial transactions and bill payments. Created scenarios, executed functional, exploratory, and regression tests, managing evidence and bugs on the OCT-Alm Octane platform.",
+            "experience-card6-title": "Tester - Fóton Informática",
+            "experience-card6-duration": "Jul/2019 - Apr/2020",
+            "experience-card6-location": "Project: Caixa Econômica Federal",
+            "experience-card6-responsibility1": "Executed functional, exploratory, and confirmation testing in a Linux environment for banking products and services automation systems. Validation through SQL scripts and evidence/test case logging in Jira.",
+            "projects-title": "Projects",
+            "projects-card1-title": "Test Automation Project with Cypress",
+            "projects-card1-description": "Development of a suite of automated tests using Cypress + Cucumber to validate critical features of a web application, ensuring software quality and reliability.",
+            "projects-card1-link": "View Project",
+            "projects-card1-github": "View on GitHub",
+            "projects-card2-title": "Automation Challenge",
+            "projects-card2-description": "Automated testing for a specific project.",
+            "projects-card2-link": "View Project",
+            "projects-card2-github": "View on GitHub",
+            "contact-title": "Get in Touch!",
+            "contact-description": "If you would like to contact me, feel free to send an email or connect with me on social media.",
+            "contact-button-email": "Send an Email",
+            "contact-button-linkedin": "LinkedIn",
+            "contact-button-github": "GitHub",
+            "footer-text": "Developed by Arthur Rocha. All rights reserved. © 2026",
+          }
+        };
+
+        const setLanguage = (lang) => {
+            localStorage.setItem('language', lang);
+            
+            const elements = document.querySelectorAll('[data-transalate-key]');
+            elements.forEach(el => {
+                const key = el.getAttribute('data-transalate-key');
+                if (translations[lang] && translations[lang][key]) {
+                    el.textContent = translations[lang][key];
+                }
+            });
+
+            // Atualiza o link do CV conforme o idioma selecionado
+            const cvLink = document.getElementById('cv-download-link');
+            if (cvLink) {
+                cvLink.href = lang === 'en' ? 'assets/CV_Arthur_Rocha_EN.pdf' : 'assets/CV_Arthur_Rocha_PT.pdf';
+            }
+
+            // Atualiza o estado ativo dos botões de idioma
+            document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        };
+
+        // Aplica o idioma salvo ao carregar a página
+        setLanguage(localStorage.getItem('language') || 'pt');
+    </script>
+    <!-- Script da biblioteca AOS -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      // iniciar a biblioteca AOS
+      AOS.init({
+        duration: 800, 
+        // duração da animação em milissegundos (0.8 segundos)
+        once: true, 
+        // animação ocorre apenas uma vez
+        offset: 120
+        // Inicia a animação quando o elemento estiver a 120px da viewport
+      });
+    </script>
+  </body>
+</html>
