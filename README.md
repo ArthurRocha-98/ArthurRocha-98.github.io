@@ -25,7 +25,6 @@ Você pode abrir o projeto de duas formas simples:
 ### Método 1: Usando a extensão do Liver Server (Recomendado)
 1. Clone o repositório ou baixe os arquivos na sua máquina
 ```bash
-git clone [https://github.com/ArthurRocha-98/seu-repositorio.git](https://github.com/ArthurRocha-98/seu-repositorio.git)
 
 --------------------------------------------------------------------------------------------------------------------------------------------
 
