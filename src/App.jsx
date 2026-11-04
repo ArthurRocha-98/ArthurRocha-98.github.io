@@ -47,10 +47,11 @@ function App() {
               </a>
 
               <a 
-                className="button button-ghost" 
-                href={`${import.meta.env.BASE_URL}cv/curriculo.pdf`} 
-                download="Arthur Rocha-CV.pdf">
-                Baixar CV <ArrowDown size={16} />
+                href="/cv/Arthur_Gomes_da_Rocha.pdf" 
+                download="Arthur-Rocha-CV.pdf"
+                className="button button-ghost"
+              >
+                Baixar CV
               </a>
             </div>
             <div className="hero-socials">
