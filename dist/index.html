@@ -92,9 +92,17 @@
                 Sou formado em Análise e Desenvolvimento de Sistemas pelo Centro Universitário do Distrito Federal (UDF) e pós-graduado em Engenharia de Software, com ênfase em Qualidade e Testes, pela Faculdade Vincit.
                 Ao longo da minha trajetória profissional, venho desenvolvendo conhecimentos e experiências em testes de software, análise de qualidade, testes funcionais, testes de API e automação de testes, sempre buscando aprimorar minhas habilidades e contribuir para a entrega de soluções tecnológicas cada vez mais eficientes e confiáveis.
                 </p>
-                <div class="mt-6">
-                    <a href="assets/CV_Arthur_Rocha_PT.pdf" download id="cv-download-link" class="inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300" data-transalate-key="hero-button-projects">Baixar meu CV</a>
-                </div>
+                  <div class="mt-6">
+                    <a
+                      href="/cv/Arthur_Gomes_da_Rocha.pdf"
+                      download="Arthur-Rocha-CV.pdf"
+                      id="cv-download-link"
+                      class="inline-block bg-[var(--primary-color)] text-white px-6 py-3 rounded-lg shadow-md hover:bg-[var(--primary-color-hover)] transition-colors duration-300"
+                      data-transalate-key="hero-button-projects"
+                    >
+                      Baixar meu CV
+                    </a>
+                  </div>
             </div>
         </section>
 
@@ -384,7 +392,9 @@ Throughout my career, I have built solid knowledge and hands-on experience in so
             // Atualiza o link do CV conforme o idioma selecionado
             const cvLink = document.getElementById('cv-download-link');
             if (cvLink) {
-                cvLink.href = lang === 'en' ? 'assets/CV_Arthur_Rocha_EN.pdf' : 'assets/CV_Arthur_Rocha_PT.pdf';
+                cvLink.href = lang === 'en'
+                  ? '/cv/Arthur_Gomes_da_Rocha_EN.pdf'
+                  : '/cv/Arthur_Gomes_da_Rocha.pdf';
             }
 
             // Atualiza o estado ativo dos botões de idioma
