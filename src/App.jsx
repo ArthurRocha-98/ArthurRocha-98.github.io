@@ -47,8 +47,9 @@ function App() {
               </a>
 
               <a 
-                href="/cv/Arthur_Gomes_da_Rocha.pdf" 
-                download="Arthur-Rocha-CV.pdf"
+                href="/cv/Arthur_Gomes_da_Rocha.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="button button-ghost"
               >
                 Baixar CV
