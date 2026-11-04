@@ -38,8 +38,20 @@ function App() {
               funcionais e preparadas para pessoas reais.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#projetos">Explorar projetos <ArrowUpRight size={17} /></a>
-              <a className="button button-ghost" href="#sobre">Conheça meu perfil <ArrowDown size={16} /></a>
+              <a className="button button-primary" href="#projetos">
+                Explorar projetos <ArrowUpRight size={17} />
+              </a>
+              
+              <a className="button button-ghost" href="#sobre">
+                Conheça meu perfil <ArrowDown size={16} />
+              </a>
+
+              <a 
+                className="button button-ghost" 
+                href={`${import.meta.env.BASE_URL}cv/curriculo.pdf`} 
+                download="Arthur Rocha-CV.pdf">
+                Baixar CV <ArrowDown size={16} />
+              </a>
             </div>
             <div className="hero-socials">
               <a href="https://github.com/ArthurRocha-98" target="_blank" rel="noreferrer"><Github size={17} /> GitHub</a>
