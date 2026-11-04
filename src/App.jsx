@@ -46,10 +46,9 @@ function App() {
                 Conheça meu perfil <ArrowDown size={16} />
               </a>
 
-              <a 
-                href="/cv/Arthur_Gomes_da_Rocha.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
+              <a
+                href={`${import.meta.env.BASE_URL}cv/Arthur_Gomes_da_Rocha.pdf`}
+                download="Arthur-Rocha-CV.pdf"
                 className="button button-ghost"
               >
                 Baixar CV
